@@ -50,5 +50,122 @@
                 Console.WriteLine("invalid credintials");
             }
         }
+
+        // Usage of array and lists in OOP
+        /*
+
+        
+int[] ages = new int[4];
+
+Guest[] clients = new Guest[10];
+
+ages[0]=6;
+
+clients [0] = new Guest("ahmed", 123);
+clients [1] = new Guest ("karim" , 3445)
+
+
+foreach( int c in ages )
+{
+  Console.writeline(c)
+}
+
+
+foreach( Guest g in Clients )
+{
+
+  Console.writeline( g.name )
+
+}
+
+
+
+
+
+
+
+// step1 setup
+Guest[] clients = new Guest[10];
+string username;
+int userId;
+
+for(int i=0; i < clients.length; i++)
+{
+   username = Console.readline();
+   userID = int.parse(Console.readline());
+
+   Client[i] = new Guest(username, USerID);
+   
+
+}
+
+
+//step2 use/print
+for(int i=0; i < clients.length; i++)
+{
+   Console.writeline( client[i].name )
+}
+
+///////////////////////////////////////////////////////////////
+
+
+//if List
+List<Guest>  clients = new List<Guests>();
+username = Console.readline();
+userID = int.parse(Console.readline());
+
+clients.add( new Guest(username, USerID)  )
+
+
+
+
+Lambda expression
+
+
+
+
+
+Class Account
+{
+
+ownerName
+AccNumber
+Balance
+Currency
+StartDate
+
+
+Deposit()
+
+Withdraw()
+
+ViewBalance()
+
+
+viewTransactionHistory(accnumber)
+
+PrintReciept()
+
+}
+
+Class Transaction
+{
+
+AccNumbr
+Date
+Type
+amount
+
+
+}
+
+
+class review()
+{
+
+
+}
+     
+         */
     }
 }
