@@ -167,5 +167,169 @@ class review()
 }
      
          */
+
+
+
+
+        /////////////////////////////////////////////////////
+        ///
+        /*   Solve the minibank system with oop part1
+             /*
+     * step 1: determine the main class ex: user or patient or visitor
+     * step 2: decide which data will be primitive and which user defined
+     * and which is single / list
+     * step 3: implement all the user defined classes needed
+     * step 4: keep repeating 2,3 till all classes have only primitive
+     * step 5: complete all other seperate classes needed
+     * step 6: we are now defined all data needed and the next step 
+     * is to determine the access modifiers / and static 
+     
+     * step 7: for private data fields implement public methods
+     * to set and get them
+     * step 8: implemet methods which have logic
+     * step 9: implement Main program method with it's logic
+     * ( instantiate system objects )
+     *//*
+        class Transaction
+        {
+            public DateTime Date { get; set; }
+            public string Type { get; set; } // Deposit or Withdraw
+            public double Amount { get; set; }
+
+            public override string ToString()
+            {
+                return $"{Date}|{Type}|{Amount}";
+            }
+
+            public static Transaction FromString(string line)
+            {
+                var parts = line.Split('|');
+                return new Transaction
+                {
+                    Date = DateTime.Parse(parts[0]),
+                    Type = parts[1],
+                    Amount = double.Parse(parts[2])
+                };
+            }
+        }
+
+        class Review
+        {
+            public string Reviewer { get; set; }
+            public DateTime Date { get; set; }
+            public int Rating { get; set; }
+
+            public void Priting()
+            {
+                Console.WriteLine($"{Date}|{Reviewer}|Rating: {Rating}/5");
+            }
+        }
+
+        class Account
+        {
+            public int AccountNumber { get; set; }
+            //public string AccountHolder { get; set; }
+            public double Balance { get; private set; }
+            public List<Transaction> Transactions { get; private set; }
+
+            public Account(int accNo, string holder)
+            {
+                AccountNumber = accNo;
+                // AccountHolder = holder;
+                Balance = 0.0;
+                Transactions = new List<Transaction>();
+                // Reviews = new List<Review>();
+            }
+
+            public void Deposit(double amount)
+            {
+                if (amount <= 0)
+                {
+                    Console.WriteLine("Invalid deposit amount.");
+                    return;
+                }
+
+                Balance += amount;
+                Transactions.Add(new Transaction
+                {
+                    Date = DateTime.Now,
+                    Type = "Deposit",
+                    Amount = amount
+                });
+            }
+
+            public void Withdraw(double amount)
+            {
+                if (amount <= 0)
+                {
+                    Console.WriteLine("Invalid withdraw amount.");
+                    return;
+                }
+
+                if (Balance >= amount)
+                {
+                    Balance -= amount;
+                    Transactions.Add(new Transaction
+                    {
+                        Date = DateTime.Now,
+                        Type = "Withdraw",
+                        Amount = amount
+                    });
+                }
+                else
+                {
+                    Console.WriteLine("Insufficient balance.");
+                }
+            }
+
+            public void ShowTransactions()
+            {
+                Console.WriteLine("Transaction History:");
+                foreach (Transaction t in Transactions)
+                {
+                    Console.WriteLine(t.ToString());
+                }
+            }
+
+
+
+            public override string ToString()
+            {
+                return $"{AccountNumber},{Balance}";
+            }
+        }
+
+        class User
+        {
+            public int Id { get; set; }
+            public string UserName { get; set; }
+            public DateOnly Birthdate { get; set; }
+            public string Email { get; set; }
+            public int age { get; set; }
+            public string Password { get; set; }
+
+            public List<Account> Accounts { get; set; }
+            public List<Review> Reviews { get; private set; }
+
+            public void AddReview(string reviewer, int rating)
+            {
+                Reviews.Add(new Review
+                {
+                    Reviewer = reviewer,
+                    Date = DateTime.Now,
+                    Rating = rating
+                });
+            }
+
+            public void ShowReviews()
+            {
+                Console.WriteLine("Reviews:");
+                foreach (var review in Reviews)
+                {
+                    Console.WriteLine(review.ToString());
+                }
+            }
+        }
+         */
     }
 }
